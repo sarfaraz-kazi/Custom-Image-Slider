@@ -1,0 +1,604 @@
+/**
+ * Custom Image Gallery Admin Styles
+ */
+
+/* Notice styles */
+.cig-notice {
+    margin: 15px 0;
+    padding: 12px;
+    border-left: 4px solid;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.cig-notice.notice-success {
+    border-left-color: #46b450;
+}
+
+.cig-notice.notice-error {
+    border-left-color: #dc3232;
+}
+
+/* Gallery cards grid */
+.cig-galleries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cig-gallery-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.cig-gallery-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.cig-gallery-featured {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.cig-gallery-featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cig-gallery-card:hover .cig-gallery-featured img {
+    transform: scale(1.05);
+}
+
+.cig-gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.cig-gallery-card:hover .cig-gallery-overlay {
+    opacity: 1;
+}
+
+.cig-image-count {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.cig-gallery-info {
+    padding: 20px;
+}
+
+.cig-gallery-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.cig-gallery-info p {
+    margin: 0 0 12px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.cig-gallery-meta {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.cig-gallery-shortcode {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+.cig-gallery-shortcode label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cig-gallery-shortcode input {
+    width: 100%;
+    padding: 6px 8px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cig-gallery-shortcode input:hover,
+.cig-gallery-shortcode input:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 0 1px #0073aa;
+}
+
+.cig-gallery-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.cig-gallery-actions .button {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+/* Empty state */
+.cig-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.cig-empty-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.cig-empty-state h2 {
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.cig-empty-state p {
+    color: #999;
+    margin-bottom: 24px;
+}
+
+/* Form container */
+.cig-form-container {
+    max-width: 1200px;
+}
+
+.cig-gallery-form,
+.cig-images-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.cig-gallery-form h2,
+.cig-images-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f0f0;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Upload area */
+.cig-upload-area {
+    margin-bottom: 30px;
+}
+
+.cig-dropzone {
+    border: 2px dashed #c3c4c7;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #fafafa;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.cig-dropzone:hover {
+    border-color: #0073aa;
+    background: #f6fbfd;
+}
+
+.cig-dropzone.dragover {
+    border-color: #0073aa;
+    background: #e7f3ff;
+    transform: scale(1.02);
+}
+
+.cig-dropzone-content {
+    pointer-events: none;
+}
+
+.cig-dropzone-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.cig-dropzone p {
+    margin: 8px 0;
+    color: #666;
+}
+
+.cig-dropzone p:first-of-type {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.cig-dropzone #cig-browse-btn {
+    pointer-events: all;
+    color: #0073aa;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+}
+
+.cig-dropzone #cig-browse-btn:hover {
+    color: #005a87;
+}
+
+.cig-upload-info {
+    font-size: 12px !important;
+    color: #999 !important;
+    margin-top: 12px !important;
+}
+
+/* Upload progress */
+.cig-upload-progress {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cig-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.cig-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0073aa, #005a87);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.cig-progress-text {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Images grid */
+.cig-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cig-image-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s ease;
+    cursor: move;
+}
+
+.cig-image-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.cig-image-preview {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.cig-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cig-image-item:hover .cig-image-preview img {
+    transform: scale(1.05);
+}
+
+.cig-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.cig-image-item:hover .cig-image-overlay {
+    opacity: 1;
+}
+
+.cig-delete-image {
+    background: #dc3232;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cig-delete-image:hover {
+    background: #a00;
+    transform: scale(1.1);
+}
+
+.cig-image-info {
+    padding: 12px;
+}
+
+.cig-alt-text, .cig-title-text, .cig-image-description {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    transition: border-color 0.2s ease;
+    resize: none;
+}
+
+.cig-alt-text:focus, cig-title-text:focus {
+    border-color: #0073aa;
+    outline: none;
+    box-shadow: 0 0 0 1px #0073aa;
+}
+
+
+.cig-filename {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    word-break: break-all;
+    line-height: 1.3;
+}
+
+.cig-drag-handle {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: move;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.cig-image-item:hover .cig-drag-handle {
+    opacity: 1;
+}
+
+/* Sortable styles */
+.ui-sortable-helper {
+    transform: rotate(3deg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.ui-sortable-placeholder {
+    border: 2px dashed #0073aa !important;
+    background: #f0f8ff !important;
+    visibility: visible !important;
+    height: 220px !important;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui-sortable-placeholder::before {
+    content: "Drop here";
+    color: #0073aa;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Shortcode display */
+.cig-shortcode-display {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    border: 1px solid #b3d9ff;
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 30px;
+}
+
+.cig-shortcode-display h3 {
+    margin: 0 0 12px 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cig-shortcode-display p {
+    margin: 0 0 16px 0;
+    color: #666;
+}
+
+.cig-shortcode-box {
+    position: relative;
+}
+
+.cig-shortcode-box input {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding-right: 80px;
+}
+
+.cig-shortcode-box input:hover,
+.cig-shortcode-box input:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 0 1px #0073aa;
+}
+
+.cig-copy-hint {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #666;
+    pointer-events: none;
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #e9ecef;
+}
+
+/* Settings page styles */
+.cig-settings-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.cig-settings-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f0f0;
+    color: #333;
+    font-weight: 600;
+}
+
+.cig-settings-section .form-table th {
+    width: 200px;
+    font-weight: 600;
+    color: #333;
+}
+
+.cig-settings-section .form-table td {
+    padding-bottom: 20px;
+}
+
+.cig-settings-section .description {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .cig-galleries-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cig-images-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .cig-gallery-actions {
+        flex-direction: column;
+    }
+    
+    .cig-dropzone {
+        padding: 30px 15px;
+    }
+    
+    .cig-dropzone-icon {
+        font-size: 36px;
+    }
+    
+    .cig-form-container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cig-images-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .cig-image-preview {
+        height: 120px;
+    }
+    
+    .cig-shortcode-box input {
+        font-size: 12px;
+        padding: 10px 12px;
+        padding-right: 70px;
+    }
+    
+    .cig-copy-hint {
+        font-size: 10px;
+        right: 12px;
+    }
+}
